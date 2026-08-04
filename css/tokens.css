@@ -1,0 +1,155 @@
+/* ==========================================================================
+   Kuuttila Bar — Colors & Type
+   "Livingroomish" in the literal sense: a warm, eclectic, candlelit living
+   room glowing red-orange with flashes of turquoise, fuchsia and mustard.
+   Recalibrated from real Instagram photography (Apr 2026).
+   ========================================================================== */
+
+/* Fonts are self-hosted (assets/fonts + css/fonts.css) — no Google Fonts
+   request, so no visitor IP reaches Google (GDPR). */
+
+:root {
+  /* ---------- Base / room tones ---------- */
+  /* The photos have very little pure black — the darks are deep indigo,
+     burgundy and plum. We anchor the system there. */
+  --bg-color:          #1a0e1f;   /* deep plum-indigo — the "room" */
+  --bg-deep:           #0f0816;   /* darker well for contrast */
+  --bg-elevated:       #2a1228;   /* warmer panel, near bar-top shadow */
+  --bg-burgundy:       #3a0f18;   /* burgundy wash (walls, banquettes) */
+  --bg-panel:          rgba(30, 14, 28, 0.72);
+
+  /* Warm off-white — like paper under tungsten, not screen white */
+  --text-primary:      #fff1e0;
+  --text-secondary:    #d9b9a4;   /* dusty peach — readable over warm bg */
+  --text-muted:        #a88c7c;
+
+  /* ---------- Accents — the neon & glow of the bar ---------- */
+  --accent-red:        #e8442c;   /* PRIMARY — coral-red string lights */
+  --accent-red-deep:   #b52a1a;   /* pressed / shadow variant */
+  --accent-turquoise:  #21c6c6;   /* window neon: martini glass ring */
+  --accent-fuchsia:    #ff2f8a;   /* window neon: pink cocktail */
+  --accent-mustard:    #e9b530;   /* doors, curtains, lamp glow */
+  --accent-emerald:    #2a7a5a;   /* wall green */
+  --accent-amber:      #c8743a;   /* honey wood */
+
+  /* Semantic tokens */
+  --fg-1:              var(--text-primary);
+  --fg-2:              var(--text-secondary);
+  --fg-3:              var(--text-muted);
+  --fg-accent:         var(--accent-red);
+
+  --bg-1:              var(--bg-color);
+  --bg-2:              var(--bg-elevated);
+  --bg-3:              var(--bg-burgundy);
+
+  --border-faint:      rgba(255, 241, 224, 0.08);
+  --border-muted:      rgba(255, 241, 224, 0.14);
+  --border-strong:     rgba(255, 241, 224, 0.28);
+
+  --overlay-scrim:     rgba(26, 14, 31, 0.82);
+  --overlay-top:       linear-gradient(to bottom, rgba(26,14,31,0.92) 0%, rgba(26,14,31,0) 100%);
+  --overlay-hero:      linear-gradient(to bottom, rgba(26,14,31,0.15) 0%, rgba(26,14,31,0.85) 100%);
+  --overlay-warm:      linear-gradient(135deg, rgba(232,68,44,0.25) 0%, rgba(26,14,31,0.85) 70%);
+
+  /* ---------- Typography ---------- */
+  /* Fraunces — warmer, slightly irregular modern serif; carries the
+     "handmade, eclectic" character much better than Playfair.
+     Inter stays as the sans for UI and body. */
+  --font-heading:  'Fraunces', 'Georgia', 'Times New Roman', serif;
+  --font-body:     'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', sans-serif;
+
+  /* Type scale — desktop */
+  --type-display:   5.25rem;  /* Hero h1 */
+  --type-h1:        3rem;     /* Section h2 */
+  --type-h2:        2.25rem;
+  --type-h3:        1.35rem;
+  --type-h4:        1.1rem;
+  --type-lead:      1.25rem;
+  --type-body:      1.0625rem;
+  --type-ui:        1rem;
+  --type-small:     0.875rem;
+  --type-micro:     0.72rem;
+
+  /* Tracking — softer than before. Fraunces has its own rhythm; no need
+     to crush spacing. Wide tracking reserved for UPPERCASE labels. */
+  --track-heading:  0.005em;  /* near-natural */
+  --track-display:  -0.015em; /* display tightens slightly */
+  --track-logo:     0.16em;
+  --track-logo-sub: 0.32em;
+  --track-nav:      0.12em;
+  --track-btn:      0.14em;
+
+  /* Line heights */
+  --lh-body:    1.6;
+  --lh-display: 1.05;
+
+  /* ---------- Spacing ---------- */
+  --spacing-xs: 0.5rem;
+  --spacing-sm: 1rem;
+  --spacing-md: 2.5rem;
+  --spacing-lg: 5rem;
+  --spacing-xl: 7rem;
+
+  /* ---------- Radii ---------- */
+  --radius-btn:    999px;   /* pill buttons — warmer, more inviting */
+  --radius-card:   14px;
+  --radius-tile:   6px;
+
+  /* ---------- Shadows & glows ---------- */
+  --shadow-heading:  0 2px 20px rgba(0,0,0,0.55);
+  --glow-red:        0 0 22px rgba(232, 68, 44, 0.55), 0 0 48px rgba(232, 68, 44, 0.25);
+  --glow-turquoise:  0 0 18px rgba(33, 198, 198, 0.7),  0 0 40px rgba(33, 198, 198, 0.3);
+  --glow-fuchsia:    0 0 18px rgba(255, 47, 138, 0.7),  0 0 40px rgba(255, 47, 138, 0.3);
+
+  /* ---------- Motion ---------- */
+  --ease:           cubic-bezier(.2,.7,.3,1);
+  --dur-fast:       0.25s;
+  --dur-medium:     0.6s;
+  --dur-slow:       1.4s;
+  --dur-ambient:    18s;
+}
+
+/* ==========================================================================
+   Semantic element defaults
+   ========================================================================== */
+
+body {
+  background-color: var(--bg-1);
+  color: var(--fg-1);
+  font-family: var(--font-body);
+  font-size: var(--type-ui);
+  line-height: var(--lh-body);
+}
+
+h1, h2, h3, h4 {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-variation-settings: "opsz" 72, "SOFT" 50;
+  letter-spacing: var(--track-heading);
+  margin-bottom: var(--spacing-sm);
+}
+
+h1 {
+  font-size: var(--type-display);
+  line-height: var(--lh-display);
+  letter-spacing: var(--track-display);
+}
+h2 { font-size: var(--type-h1); }
+h3 { font-size: var(--type-h3); color: var(--accent-red); }
+h4 { font-size: var(--type-h4); }
+
+p  { color: var(--fg-2); }
+
+a  {
+  color: var(--fg-1);
+  text-decoration: none;
+  transition: color var(--dur-fast) var(--ease);
+}
+a:hover { color: var(--accent-red); }
+
+.u-label {
+  text-transform: uppercase;
+  letter-spacing: var(--track-nav);
+  font-size: var(--type-small);
+  font-weight: 500;
+}

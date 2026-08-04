@@ -1,0 +1,6 @@
+# Source photo dumps — web-optimized copies live in images/
+01_barphotos/
+
+# Internal working files
+CLAUDE.md
+.claude/
